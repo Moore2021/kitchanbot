@@ -1,4 +1,5 @@
 # Kitchanbot
+<img alt="GitHub" src="https://img.shields.io/github/license/Moore2021/kitchanbot"> <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/Moore2021/kitchanbot/master">
 
 A bot that can be used to comminicate between a website, twitch, and discord.
 
@@ -22,7 +23,7 @@ I will **happily** accept your pull request if it:
 
 ## Troubleshooting and FAQ
 
-The causes and solutions to common errors can be found among the [Frequently Asked Questions (FAQ)]
+The causes and solutions to common errors can be found among the Frequently Asked Questions (FAQ)
 
 ## License
 
