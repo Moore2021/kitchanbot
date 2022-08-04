@@ -1,5 +1,6 @@
 # Kitchanbot
-<img alt="GitHub" src="https://img.shields.io/github/license/Moore2021/kitchanbot"> <img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/Moore2021/kitchanbot/master">
+<img alt="GitHub" src="https://img.shields.io/github/license/moore2021/kitchanbot">
+<img alt="GitHub package.json version (branch)" src="https://img.shields.io/github/package-json/v/Moore2021/kitchanbot/master">
 
 A bot that can be used to comminicate between a website, twitch, and discord.
 
