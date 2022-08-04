@@ -7,19 +7,27 @@
     "start": "node --trace-warnings index.js",
     "production": "pm2 start index.js --trace --name \"production\" && echo \"Started production\"",
     "dev": "nodemon index.js",
-    "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.js"
+    "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.js",
+    "lint:check": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "discord.js": "^14.1.2",
-    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "knex": "^2.2.0",
     "pg": "^8.7.3",
     "tmi.js": "^1.8.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19",
+    "eslint": "^8.21.0"
   }
 }

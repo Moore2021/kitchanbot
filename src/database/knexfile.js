@@ -16,7 +16,7 @@ module.exports = {
         max: Number(process.env.DATABASE_POOL_MAX),
       },
       migrations: {
-        tableName: 'knex_migrations',
+        tableName: `knex_migrations`,
       },
     },
   };
