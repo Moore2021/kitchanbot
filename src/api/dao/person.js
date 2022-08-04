@@ -1,14 +1,14 @@
-const db = require('../../database/database');
+const db = require(`../../database/database`);
 
 class PersonDAO {
   async createPerson(firstName, lastName, email) {
-    const [id] = await db('person')
+    const [id] = await db(`person`)
       .insert({
         email,
         first_name: firstName,
         last_name: lastName,
       })
-      .returning('id');
+      .returning(`id`);
 
     return id;
   }

@@ -10,5 +10,5 @@ app.use(router);
 
 app.listen(8080, () => console.log(`Server listening on port 8080`));
 
-require(`./src/bot/twitchbot`)()
-require(`./src/bot/discordbot`)()
+require(`./src/bot/twitchbot`)();
+require(`./src/bot/discordbot`)();

@@ -1,4 +1,4 @@
-const personDAO = require('../dao/person');
+const personDAO = require(`../dao/person`);
 
 class PersonService {
   createPerson(personDto) {
