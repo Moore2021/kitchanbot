@@ -1,0 +1,25 @@
+{
+  "name": "twitchchat",
+  "version": "1.0.0",
+  "description": "A bot to interact with twitch and discord together",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --trace-warnings index.js",
+    "production": "pm2 start index.js --trace --name \"production\" && echo \"Started production\"",
+    "dev": "nodemon index.js",
+    "migrate": "npx knex migrate:latest --knexfile src/db/knexfile.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.1.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "knex": "^2.2.0",
+    "pg": "^8.7.3",
+    "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
