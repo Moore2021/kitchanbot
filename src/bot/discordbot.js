@@ -6,6 +6,7 @@ const client = new Client({
     intents: [GatewayIntentBits.Guilds]
 });
 const commandsLoader = require(`./commands/loader`);
+const db = require(`../database/database`);
 
 module.exports = () => {
 
@@ -13,6 +14,7 @@ module.exports = () => {
     registerNode(client, commandsLoader(),`commands`);
     require(`./controllers/applicationCommands`)({ commands: client.commands });
     require(`./controllers/discordEvents`)(client);
+    registerNode(client, db, `db`);
 
     /**
      * Registering new first-level property/node into this.
@@ -25,7 +27,7 @@ module.exports = () => {
         const fn = `[DISCORD@REGISTER_NODE]`;
         if (!nodeName || !node || !nodeToAttachTo) throw new TypeError(`${fn} parameters (node, nodeName, nodeToAttachTo) cannot be blank.`);
         if (typeof nodeName != `string`) throw new TypeError(`${fn} parameter 'nodeName' only accepts string.`);
-        [nodeToAttachTo][nodeName] = node;
+        nodeToAttachTo[nodeName] = node;
         console.log(`${fn} '${nodeName}' has been registered as client's property.`);
     }
 

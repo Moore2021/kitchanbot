@@ -1,7 +1,7 @@
 const reqEvent = (event) => require(`../events/twitch/${event}.js`);
     /**
      * Handles events in the current node
-     * @param {client} Annie Current bot instance.
+     * @param {client} client Current bot instance.
      * @return {void}
      */
 module.exports = function eventsController(client) {

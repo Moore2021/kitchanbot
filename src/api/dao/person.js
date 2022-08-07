@@ -2,14 +2,16 @@ const db = require(`../../database/database`);
 
 class PersonDAO {
   async createPerson(firstName, lastName, email) {
+    console.log(`Creating person with firstName: ${firstName} lastName: ${lastName} email: ${email}`);
     const [id] = await db(`person`)
       .insert({
         email,
-        first_name: firstName,
-        last_name: lastName,
+        firstName: firstName,
+        lastName: lastName,
       })
-      .returning(`id`);
+      .returning(`firstName`);
 
+      console.log(id);
     return id;
   }
 }
