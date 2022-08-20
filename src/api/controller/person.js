@@ -1,4 +1,4 @@
-const personService = require(`../service/person`);
+import personService from '../service/person.js';
 
 class PersonController {
     async createPerson(req, res) {
@@ -7,9 +7,9 @@ class PersonController {
             res.status(201).json(id);
         } catch (err) {
             console.error(err);
-            res.status(500).json(`something went wrong`);
+            res.status(500).json('something went wrong');
         }
     }
 }
 
-module.exports = new PersonController();
+export default new PersonController();

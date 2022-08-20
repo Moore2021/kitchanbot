@@ -1,7 +1,7 @@
 class internalServiceRouter {
     async post(service, data) {
         try {
-            let module = require(`../service/${service}`);
+            let module = await import(`../service/${service}.js`);
             const id = await module[data.request](data.body);
             console.log(`${id}`);
         } catch (err){
@@ -10,4 +10,4 @@ class internalServiceRouter {
     }
 }
 
-module.exports = new internalServiceRouter();
+export default new internalServiceRouter();

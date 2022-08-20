@@ -1,3 +1,3 @@
-module.exports = function connecting(client) {
+export default function connecting(client) {
     console.log(`[TWITCH] twitchbot: ${client.opts.identity.username} ready!`);
-};
+}

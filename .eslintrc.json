@@ -10,7 +10,8 @@
         "SharedArrayBuffer": "readonly"
     },
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
         "no-mixed-spaces-and-tabs": "off",
@@ -24,7 +25,7 @@
         "linebreak-style": "off",
         "quotes": [
             "error",
-            "backtick"
+            "single"
         ],
         "semi": [
             "error",

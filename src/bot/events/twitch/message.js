@@ -1,12 +1,13 @@
-const findCommand = require(`../../utils/findCommand`);
-const {twitchPermissions} = require(`../../utils/permissions`);
-const internalServiceRouter = require(`../../../api/internal/internalServiceRouter`);
+import findCommand from '../../utils/findCommand.js';
+import {twitchPermissions} from '../../utils/permissions.js';
+import internalServiceRouter from '../../../api/internal/internalServiceRouter.js';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
-
-module.exports = async function message(client, channel, tags, message, self) {
+export default async function message(client, channel, tags, message, self) {
     if (self || !message.startsWith(process.env.PREFIX)) return; // Ignore messages from the bot
 
-    const args = message.slice(1).split(` `); // Remove the prefix and split the message into arguments
+    const args = message.slice(1).split(' '); // Remove the prefix and split the message into arguments
     const targetCommand = args.shift().toLowerCase(); // Get the command and remove it from the arguments
     let command = findCommand(client, targetCommand); // Find the command
 
@@ -23,5 +24,4 @@ module.exports = async function message(client, channel, tags, message, self) {
     } catch (e) {
         console.error(e);
     }
-    console.log(`command.filename: ${command.filename}`);
-};
+}

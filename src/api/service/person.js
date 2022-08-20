@@ -1,4 +1,4 @@
-const personDAO = require(`../dao/person`);
+import personDAO from '../dao/person.js';
 
 class PersonService {
   createPerson(personDto) {
@@ -7,4 +7,4 @@ class PersonService {
   }
 }
 
-module.exports = new PersonService();
+export default new PersonService();

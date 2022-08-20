@@ -1,19 +1,18 @@
-const db = require(`../../database/database`);
-
+import db from '../../database/database.js';
 class PersonDAO {
   async createPerson(firstName, lastName, email) {
     console.log(`Creating person with firstName: ${firstName} lastName: ${lastName} email: ${email}`);
-    const [id] = await db(`person`)
+    const [id] = await db('person')
       .insert({
         email,
         firstName: firstName,
         lastName: lastName,
       })
-      .returning(`firstName`);
+      .returning('firstName');
 
       console.log(id);
     return id;
   }
 }
 
-module.exports = new PersonDAO();
+export default new PersonDAO();

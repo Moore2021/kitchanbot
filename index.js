@@ -1,14 +1,14 @@
-require(`dotenv`).config();
-
-const express = require(`express`);
-const router = require(`./src/website/routes`);
+import * as dotenv from 'dotenv';
+dotenv.config();
+import express, { json } from 'express';
 
 const app = express();
-app.use(express.json());
-app.use(router);
+app.use(json());
 
 
-app.listen(8080, () => console.log(`Server listening on port 8080`));
+app.listen(8080, () => console.log('Server listening on port 8080'));
 
-require(`./src/bot/twitchbot`)();
-require(`./src/bot/discordbot`)();
+import twitchbot from './src/bot/twitchbot.js';
+import discordbot from './src/bot/discordbot.js';
+twitchbot();
+discordbot();

@@ -8,42 +8,36 @@
  * Command's Class description
  * @author yourname
  */
-module.exports {
     /**
      * Define the file name (without the extension!)
      * @type {string}
      */
-    name: `commandName`,
+    export const name = `commandName`;
     /**
      * Define accepted aliases. User will be able to call the command with these alternative names.
      * @type {object}
      */
-    aliases: [`itscommand`, `cmdName`, `justCallMeCommand!`],
+    export const aliases = [`itscommand`, `cmdName`, `justCallMeCommand!`];
     /**
      * Make a short, clear and concise command's description
      * @type {string}
      */
-    description: `This is a command's template`,
+    export const description = `This is a command's template`;
     /**
      * Define if the command can be used as a slash command or not for Discord.
      * @type {Boolean} 
      */
-    applicationCommand: false,
+    export const applicationCommand = false;
     /**
      * Define how to use the command. Include optional arguments/flags if needed
      * @type {string}
      */
-    usage: `command <withArgument>(Optional)`,
+    export const usage = `command <withArgument>(Optional)`;
     /**
      * Define the minimum permission level to use the command. Refer to ./src/config/permissions.js for more info
      * @type {number}
      */
-    permissionLevel: 0,
-    /**
-     * Define the command's filename.
-     * @type {string} 
-     */
-    filename: `hello`,
+    export const permissionLevel = 0;
     /**
      * The executed function upon command invocation.
      * The standard provided prarameters are writen in sequence below
@@ -57,17 +51,19 @@ module.exports {
      * @param {Object} self the twitch self object
      * @returns {void}
      */
-    async twitchExecute(client, channel, tags, message, self){
+    export async twitchExecute(client, channel, tags, message, self){
         // ... Your command ran here.
-    },
+    }
     /**
      * The executed function upon command invocation.
      * The standard provided prarameters are writen in sequence below
      * [client, reply, message, arg, locale]
      * @type {function}
+     * 
+     * @param {Object} client the discord client object
+     * @param {Object} channel the twitch channel object
      */
-    async discordExecute(client, interaction) {
+    export async discordExecute(client, interaction) {
         // ... Your command ran here.
     }
-}
 ```

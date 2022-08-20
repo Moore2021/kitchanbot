@@ -1,13 +1,13 @@
-const reqEvent = (event) => require(`../events/discord/${event}.js`);
+import readyEvent from '../events/discord/ready.js';
+import interactionCreate from '../events/discord/interactionCreate.js';
     /**
      * Handles events in the current node
      * @param {client} client Current bot instance.
      * @return {void}
      */
-module.exports = function eventsController(client) {
-    client.once(`ready`, () => reqEvent(`ready`)(client));
-    client.on(`error`, (e) => reqEvent(`error`)(client, e));
-    client.on(`interactionCreate`, (interaction) => reqEvent(`interactionCreate`)(client, interaction));
+export default function eventsController(client) {
+    client.once('ready', () => readyEvent(client));
+    client.on('interactionCreate', (interaction) => interactionCreate(client, interaction));
     //  Events below this point is only available in the production
     if (client.dev) return;
-};
+}
